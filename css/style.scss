@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns:1fr .5fr .5fr 1fr ;
+    grid-template-rows: 1fr .4fr .4fr .7fr 1fr 1fr ;
+    grid-template-areas: 
+    "  header   header      header   "
+    "  location icon        section   "
+    "  location temperature other  "
+    "  location description other  "
+    ;
+ 
+    background: linear-gradient(to right, #e6dada, #274046);
+    font-family: sans-serif;
+    color: white;
+}
+.location, .temperature, .icon, .temperature-description{
+    display: flex;
+    flex-direction: end;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}
+.location{
+    grid-area: location;
+    flex-direction: column;
+    
+    
+}
+h2{
+    font-weight: lighter;
+    font-size: 1em;
+}
+.temperature-degree {
+    font-size: 30px;
+}
+.icon{
+    grid-area: icon;
+    border-radius: 0  2em  0 0;
+    
+}
+.temperature {
+    flex-direction: column;
+    grid-area: temperature;
+}
+.degree-section{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+.degree-section span{
+    margin: 10px;
+    font-size: 30px;
+}
+.temperature-description {
+    font-size: 20px;
+    grid-area: description;
+    border-radius: 0 0 2em 0;
+    
+}
+@media only screen and (max-width:550px) {
+    body{
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr .4fr .4fr .7fr 1fr ;
+        grid-template-areas: 
+        "location   "
+        " icon   "
+        " temperature  "
+        "description  "
+        ;
+        .location{
+            grid-area: location;
+            flex-direction: column;
+            
+        }
+        
+        .temperature-description {
+            font-size: 20px;
+            grid-area: description;
+        }
+        
+    }
+    .icon{
+        grid-area: icon;
+        
+    }
+}

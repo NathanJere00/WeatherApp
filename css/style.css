@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr .5fr .5fr 1fr;
+      grid-template-columns: 1fr .5fr .5fr 1fr;
+  -ms-grid-rows: 1fr .4fr .4fr .7fr 1fr 1fr;
+      grid-template-rows: 1fr .4fr .4fr .7fr 1fr 1fr;
+      grid-template-areas: "  header   header      header   " "  location icon        section   " "  location temperature other  " "  location description other  ";
+  background: -webkit-gradient(linear, left top, right top, from(#e6dada), to(#274046));
+  background: linear-gradient(to right, #e6dada, #274046);
+  font-family: sans-serif;
+  color: white;
+}
+
+.location, .temperature, .icon, .temperature-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: end;
+          flex-direction: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.location {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: location;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.temperature-degree {
+  font-size: 30px;
+}
+
+.icon {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: icon;
+  border-radius: 0  2em  0 0;
+}
+
+.temperature {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: temperature;
+}
+
+.degree-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+}
+
+.degree-section span {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.temperature-description {
+  font-size: 20px;
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: description;
+  border-radius: 0 0 2em 0;
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr .4fr .4fr .7fr 1fr;
+        grid-template-rows: 1fr .4fr .4fr .7fr 1fr;
+        grid-template-areas: "location   " " icon   " " temperature  " "description  ";
+  }
+  body .location {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: location;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .temperature-description {
+    font-size: 20px;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: description;
+  }
+  .icon {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: icon;
+  }
+}
+/*# sourceMappingURL=style.css.map */
